@@ -1,7 +1,7 @@
 {
-  "name": "@crosswise/limit-order-relayer",
-  "version": "0.7.0",
-  "main": "dist/index.js",
+  "name": "crosswise-limit-order-relayer",
+  "version": "1.0.0",
+  "main": "dist/index.ts",
   "files": [
     "dist",
     "src"
@@ -9,7 +9,9 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
-    "start": "yarn run build && node dist/index.js"
+    "start": "yarn run build && node dist/index.ts",
+    "lint": "eslint --ext .js,.ts .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "engines": {
     "node": ">= 14.0.0",
@@ -24,6 +26,9 @@
   },
   "devDependencies": {
     "@typechain/ethers-v5": "^8.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "eslint": "^8.4.1",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "tslint": "^6.1.3",
